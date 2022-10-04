@@ -40,11 +40,13 @@ class MyWidget(QWidget):
         self.content_folder_label = QLabel(self.content_save_location, self)
         self.content_folder_label.setStyleSheet("color:gray")
         self.content_folder_label.setFont(QFont('Arial', 12))
+        self.content_folder_label.setStyleSheet("background-color: Gainsboro")
         self.content_folder_label.setFixedWidth(100)
 
         self.abstract_folder_label = QLabel(self.abstract_save_location, self)
         self.abstract_folder_label.setStyleSheet("color:gray")
         self.abstract_folder_label.setFont(QFont('Arial', 12))
+        self.abstract_folder_label.setStyleSheet("background-color: Gainsboro")
         self.abstract_folder_label.setFixedWidth(100)
 
         self.output_file = QLabel('檔名：', self)
@@ -69,6 +71,9 @@ class MyWidget(QWidget):
 
         self.reset_btn = QPushButton('返回預設值', self)
         self.reset_btn.clicked.connect(self.resetButtonClick)
+
+        self.show_infoes_signal = QLabel(self)
+        self.show_infoes_signal.setStyleSheet("background-color: Gainsboro")
 
         self.AllLayout(layout)
 
@@ -122,6 +127,7 @@ class MyWidget(QWidget):
         layout.addWidget(self.file_name, 2, 10, 1, 2)
         layout.addWidget(self.scrawler_btn, 10, 8, 1, 4)
         layout.addWidget(self.abstract_btn, 11, 8, 1, 4)
+        layout.addWidget(self.show_infoes_signal, 3, 8, 7, 4)
         layout.addWidget(self.reset_btn, 0, 0, 1, 2)
 
         # layout.addWidget()
